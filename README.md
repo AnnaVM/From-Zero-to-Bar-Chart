@@ -13,6 +13,8 @@ After you have given this documentation a once over go back and add your own dat
 I would love to see you [create you own blocks](https://bost.ocks.org/mike/block/) to reference later. Your blocks are also helpful for other just getting started.
 
 ### Why bar charts?
+Our goal when visualizing data is to get a message across to the viewer as efficiently and accurately as possible. To do this we need to choose our encodings wisely. Not always, but very often, bar charts are a great choice.
+
 - They work
 - There are basic
 - Best practices are often over looked
