@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300" rel="stylesheet">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <style>
+    p {
+      margin: 0px 0px 0px 20px;
+      font-family: 'Montserrat';
+      font-size: 1.93em;
+      font-weight: normal;
+    }
+
+    text {
+      font-family: 'Montserrat';
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .bar {
+      fill:  #0072c8;
+    }
+
+    .bar:hover {
+      fill: #968C83;
+    }
+
+    .y path, .y stroke, .y line {
+      display: none;
+    }
+
+    .x path, .x stroke {
+      display: none;
+      shape-rendering: crispEdges;
+    }
+
+    .x line {
+      stroke: #fff;
+    }
+
+    .y text {
+      font-family: 'Open Sans';
+      font-size: 14px;
+      text-anchor: middle;
+    }
+
+    .x text {
+      font-family: 'Open Sans';
+      font-size: 10px;
+      text-anchor: middle;
+    }
+
+  </style>
+
+</head>
+<p>Relative frequencices of the letters of the English language</p>
+<body>
+
+  <script>
+
+    var margin = {
+        top: 20,
+        right: 20,
+        bottom: 30,
+        left: 40
+      };
+    var width = 960 - margin.left - margin.right;
+    var height = 500 - margin.top - margin.bottom;
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var x = d3.scaleLinear()
+          .range([0, width]);
+
+    var y = d3.scaleBand()
+        .range([height, 0]);
+
+    var xAxis = d3.axisTop(x)
+        .ticks(10, "%");
+
+    var yAxis = d3.axisLeft(y);
+
+    d3.tsv("data.tsv", type, function(error, data) {
+      if (error) throw error;
+
+      data.sort(function(a, b) {
+        return a.frequency - b.frequency;
+      });
+
+      x.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+      y.domain(data.map(function(d) { return d.letter; }))
+        .paddingInner(0.1);
+
+      svg.append("g")
+          .attr("class", "y axis")
+          .attr("transform", "translate(-3, 0)")
+          .call(yAxis);
+
+      svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0,-3)")
+          .call(xAxis);
+
+      svg.selectAll(".bar")
+          .data(data)
+        .enter().append("rect")
+          .attr("class", "bar")
+          .attr("x", 0)
+          .attr("height", y.bandwidth())
+          .attr("y", function(d) { return y(d.letter); })
+          .attr("width", function(d) { return x(d.frequency); });
+
+    });
+
+    function type(d) {
+      d.frequency = +d.frequency;
+      return d;
+    }
+
+  </script>
+
+</body>
