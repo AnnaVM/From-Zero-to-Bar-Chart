@@ -36,10 +36,6 @@
       shape-rendering: crispEdges;
     }
 
-    .x line {
-      stroke: #fff;
-    }
-
     .y text {
       font-family: 'Open Sans';
       font-size: 14px;
@@ -86,7 +82,7 @@
 
     var yAxis = d3.axisLeft(y);
 
-    d3.tsv("data.tsv", type, function(error, data) {
+    d3.csv("data.csv", type, function(error, data) {
       if (error) throw error;
 
       data.sort(function(a, b) {

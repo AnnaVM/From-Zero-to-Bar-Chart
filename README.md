@@ -1,11 +1,16 @@
 # Zero to Bar Chart with D3 v4
 
-### Who this is for
-- Beginners
-- Transitioning D3 v3 Users
+### Who is this not for
+- Experts D3 developers
+- Those comfortable feeling there own way around the documentation
+- Practitioners looking for D3 development best practice
 
 ### How to use this
-Get comfortable with a nice text editor, browser and console open as you step through the process of creating a bar chart in D3 v4. I encourage you to branch out along the way adding your own styles. After you have given this documentation a once over you may want to add your own data. I would love to see you [create you own blocks](https://bost.ocks.org/mike/block/) to reference later. Your blocks are also helpful for other just getting started.
+Before you get going, you should have text editor in front of you, a browser open as well as the console open. We'll be using these tools to step through the tutorial. I **strongly** encourage you to branch out by adding your own styles.
+
+After you have given this documentation a once over go back and add your own data.
+
+I would love to see you [create you own blocks](https://bost.ocks.org/mike/block/) to reference later. Your blocks are also helpful for other just getting started.
 
 ### Why bar charts?
 - They work
