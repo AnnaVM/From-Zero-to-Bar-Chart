@@ -16,12 +16,11 @@ I would love to see you [create you own blocks](https://bost.ocks.org/mike/block
 
 Our goal when visualizing data is to get a message across to the viewer as efficiently and accurately as possible. To do this we need to choose our encodings wisely. Not always, but very often, bar charts are a great choice.
 
-![Preattentive Attributes](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/preattentive-attributes.png)  */
-The fuzzy picture above displays server form attributes we can choose from when encoding data. I have put a box around length to draw your attention to the form of focus in the tutorial.
+![Preattentive Attributes](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/preattentive-attributes.png)
 
-- They work
-- There are basic
-- Best practices are often over looked
+The image above displays server attributes we can manipulate with our data. Which attributes you choose will affect how your data is precieved. Duh, right. Well, not every encoding is created equally. Length happens to be one of the best, if not the best, tool for comparing factors along one dimension.
+
+Sometimes the best solution is the simplest.
 
 ### Work flow
 1. Get the data
