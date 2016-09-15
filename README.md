@@ -13,7 +13,11 @@ After you have given this documentation a once over go back and add your own dat
 I would love to see you [create you own blocks](https://bost.ocks.org/mike/block/) to reference later. Your blocks are also helpful for other just getting started.
 
 ### Why bar charts?
+
 Our goal when visualizing data is to get a message across to the viewer as efficiently and accurately as possible. To do this we need to choose our encodings wisely. Not always, but very often, bar charts are a great choice.
+
+![Preattentive Attributes](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/preattentive-attributes.png)  */
+The fuzzy picture above displays server form attributes we can choose from when encoding data. I have put a box around length to draw your attention to the form of focus in the tutorial.
 
 - They work
 - There are basic
