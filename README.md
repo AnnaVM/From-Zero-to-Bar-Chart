@@ -13,11 +13,10 @@ This aim of this tutorial is walk you through the create of a bar chart with v4 
 - Practitioners looking for D3 development best practice
 
 ### How to use this
-Before you get going, you should have text editor in front of you, a browser open as well as the console open. We'll be using these tools to step through the tutorial. I **strongly** encourage you to branch out by adding your own styles.
 
-After you have given this documentation a once over go back and add your own data.
+Before you get going open up your favorite text editor, browser and the console. I haven't tested this code on any other environments than the one I am currently working with. If you have a Mac and would like to mirror my tool set use [Sublime Text](https://www.sublimetext.com/3) and [Chrome](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&sqi=2&ved=0ahUKEwijzfmCnJzPAhUhHGMKHQHmDt0QFggqMAE&url=https%3A%2F%2Fwww.google.com%2Fchrome%2Fbrowser%2Fdesktop%2F&usg=AFQjCNEnCNpcuwbjwWkR_ZzY4O_v0ORT9A&sig2=PvJ2rGXR-yg4A3IPq-4Icw&bvm=bv.133178914,d.cGc). Sublime Text and Chrome also work on PCs, but the console will be a bit different.
 
-I would love to see you [create you own blocks](https://bost.ocks.org/mike/block/) to reference later. Your blocks are also helpful for other just getting started.
+Feel free to experiment as we develop. Tweaking the code can help drive to concepts home and reveal potential gaps in understanding you wouldn't have realized otherwise. Once finished, you should do us all a favor and [create you own block](https://bost.ocks.org/mike/block/). Blocks are refernces all D3 developers use to learn and up there skills. By contributing to bl.ocks.or your adding ideas to a growing repository, making a portfolio for yourself and an easy refernce to past work you've done.
 
 ### Installation
 
