@@ -30,11 +30,11 @@ This presents a few options.
 
 I like to take the terminal route by copying the url and cloning the repo with terminal. You will want to approach this differently if you don't have [git](https://git-scm.com/downloads) installed and don't want spend the time right now setting it up. However, I will encourage to take some time getting familiar with git. It's an amazing tool. By far the most heavily utilized software engineered for open source contribution.
 
-![Clone to desktop]()
+![Clone to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-to-desktop.png)
 
 For this example, I'll clone the repo onto my desktop.
 
-![Cloned to desktop]()
+![Cloned to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/cloned-to-desktop.png)
 
 You should see this directory in your finder after cloning. If git clone doesn't work for you, you may need to enter sudo git clone. To save yourself from entering your password on every future git clone you'll want to set up [ssh-agent](http://stackoverflow.com/questions/10054318/how-to-provide-username-and-password-when-run-git-clone-gitremote-git), but this can be saved for later.
 
@@ -44,7 +44,7 @@ Once in that directory you can spin up simple server with Python. You do this be
 
 Open an incognito tab in your Chorme browser and type localhost:<and the active port> into the address bar.
 
-![Spin-a-local-server]()
+![Spin up a Simple Server](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/spin-a-simple-server.png)
 
 The finished product looks thusly :) Ready to walk through it step by step?
 
@@ -211,7 +211,7 @@ Remember, the reason we want to sort our bars is to bring the most important inf
 
 #### Declare the Limits of Our Data
 
-![input-domain]()
+![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
 
 We are physically limited by the size of our screens. We need a way to communicate that limitation to our data. The scales created earlier are our means of communicating that message. Earlier when we delcare a range for each scale we were defining the physical limitations such as width and height. Now that we have data we can finish out our scales with domains.
 
