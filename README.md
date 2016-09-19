@@ -376,8 +376,6 @@ If you'd like understand more about how CSS works please visit <howylearn.com> f
 
 ## You did it!!!
 
----
-
 ### Enhancements
 
 ### License
