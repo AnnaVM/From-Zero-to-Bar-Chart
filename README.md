@@ -91,13 +91,15 @@ Notice our data only has one row per letter...
 
 ![data-csv](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data-csv.png)
 
-#### What Message Do We Want to Communicate
-
 ---
+
+#### What Message Do We Want to Communicate
 
 The choice we have to make is between respecting the order of the letters in the alphabet (see [ordinal data](https://en.wikipedia.org/wiki/Ordinal_data)) or sort them by the measure defining the length of our bars. I would make the argument for sorting. I think sorting relieves a huge amount of work. Those reading our chart have plenty to make sense of already. Why not sort so the letters most frequently used pop out immediately?
 
 To leave the letters unsorted does tell the story of where along the alphabet the most letters used lie, but that isn't the message here. We could also encode the vowels with a different hue so they stand out. At the end of the day, the success of our chart depends how effectively we communicate the important messages.
+
+---
 
 #### Bare Bones DOM
 
@@ -119,9 +121,9 @@ Empty out the index.html file, if it isn't already, and copy/paste the code abov
 
 ![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/empty-dom.png)
 
-#### Title
-
 ---
+
+#### Title
 
 Every chart has a role to play. How do we know what this chart is meant to do? One way is by giving your chart a clear title. We'll do this with a simple p tag.
 
@@ -132,6 +134,8 @@ Every chart has a role to play. How do we know what this chart is meant to do? O
 Place the p tag inside your body tag just before the empty script tags.
 
 ![chart title](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/chart-title.png)
+
+---
 
 #### Append Your svg and g to the Screen
 
@@ -165,9 +169,9 @@ Note that 960x500 are demensions rendered inside bl.ocks.org. Feel free to chang
 
 Don't worry about the transform attribute for now. We will get into more later on. For now just know the translate argument takes a string in the form of (x, y) between the parenthesis.
 
-#### Create Scales and Axis
-
 ---
+
+#### Create Scales and Axis
 
 Some say scales are the most features of the D3 library. In this context, we will use them to convert data into to pixels, but they can be used for much much more.
 
@@ -208,9 +212,9 @@ The only specification we state in our y-axis is that we want the text to show o
 
 Nothing changing visually, because we haven't called the scales.
 
-#### We're Ready for the Data
-
 ---
+
+#### We're Ready for the Data
 
 ```javascript
 d3.csvParse("data.csv", function(error, data) {
@@ -236,9 +240,9 @@ With or frequency data converted to a number we can also sort our bars. Remember
 
 You still won't see anything different aesthetically.
 
-#### Declare the Limits of Our Data
-
 ---
+
+#### Declare the Limits of Our Data
 
 ![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
 
@@ -257,9 +261,9 @@ Copy/paste the code above just beneath the data.sort code block, but before the 
 
 This code is adding domains to our x and y scales. To our x scale we want a domain from 0 to the heighest frequency value. For our y scale we just want to map each letter to an index value and give each row a bit of space in between. The paddingInner defines what percent of each row should be left for spacing in between the bars.
 
-#### Append Our Axis
-
 ---
+
+#### Append Our Axis
 
 Get excited, this is the first step where we get to see something on the screen!
 
@@ -283,9 +287,9 @@ We just append to more g element to the intial g element positioned inside the s
 
 Everything in these code blocks you've been introduced to before except the .call(). The .call() is a method used to invoke our generators. The [.call](https://github.com/d3/d3-selection/blob/master/README.md#selection_call) is a consice way for us to call the axis functions created early while keeping them bound to our selection.
 
-#### Draw Some Rectangles!
-
 ---
+
+#### Draw Some Rectangles!
 
 It's getting really fun now. We see some stuff on our screen and we can imagine where our bars are going to be. All that's left is putting them there and styling.
 
@@ -308,9 +312,9 @@ Copy/paste the code above just below the last block you copy/pasted, but still i
 
 This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as bar and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
 
-#### Time to Pain With CSS
-
 ---
+
+#### Time to Pain With CSS
 
 In the intial html code I passed off to you, there was an opening and closing style tag. I want you to take the code below and place it in between those two tags.
 
@@ -371,6 +375,8 @@ For good measure place the line of code above in between line 3 and 4 of your in
 If you'd like understand more about how CSS works please visit <howylearn.com> for more details.
 
 ## You did it!!!
+
+---
 
 ### Enhancements
 
