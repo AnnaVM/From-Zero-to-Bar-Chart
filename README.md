@@ -22,7 +22,31 @@ Feel free to experiment as we develop. Tweaking the code can help drive to conce
 
 Clone or download this repository to a directory you would like to work from by clicking the Clone or download button on the repos' landing page.
 
-![Clone or download]()
+![Clone or download](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download.png)
+
+This presents a few options.
+
+![Clone or download options]()
+
+I like to take the terminal route by copying the url and cloning the repo with terminal. You will want to approach this differently if you don't have [git](https://git-scm.com/downloads) installed and don't want spend the time right now setting it up. However, I will encourage to take some time getting familiar with git. It's an amazing tool. By far the most heavily utilized software engineered for open source contribution.
+
+![Clone to desktop]()
+
+For this example, I'll clone the repo onto my desktop.
+
+![Cloned to desktop]()
+
+You should see this directory in your finder after cloning. If git clone doesn't work for you, you may need to enter sudo git clone. To save yourself from entering your password on every future git clone you'll want to set up [ssh-agent](http://stackoverflow.com/questions/10054318/how-to-provide-username-and-password-when-run-git-clone-gitremote-git), but this can be saved for later.
+
+Now type cd from-zero-to-bar-chart in terminal to make that your active directory.
+
+Once in that directory you can spin up simple server with Python. You do this be typing ptyhon -m SimpleHTTPServer in you terminal.
+
+Open an incognito tab in your Chorme browser and type localhost:<and the active port> into the address bar.
+
+![Spin-a-local-server]()
+
+The finished product looks thusly :) Ready to walk through it step by step?
 
 ### Why bar charts?
 
@@ -119,7 +143,7 @@ Here we are declaring a couple varibles used to set the size of our space. We ar
 
 Note that 960x500 are demensions rendered inside bl.ocks.org. Feel free to change the size of your SVG to suit your needs. I trying to get into the habit of creating bl.ock friendly charts, which is why we're choosing those dimensions.
 
-I hesitate to explain the transform attribute, becuase there is much more you can do then translate, but I will say this, translate takes a string in between the parenthesis in the the form of (x, y). If you want to use variables for the x,y make sure they converted into a string.
+Don't worry about the transform attribute for now. We will get into more later on. For now just know the translate argument takes a string in the form of (x, y) between the parenthesis. If you want to use variables for the x,y make sure they converted into a string.
 
 #### Create Scales and Axis
 
@@ -186,6 +210,8 @@ With or frequency data converted to a number we can also sort our bars approriat
 Remember, the reason we want to sort our bars is to bring the most important information to our viewers attention as quickly as possible.
 
 #### Declare the Limits of Our Data
+
+![input-domain]()
 
 We are physically limited by the size of our screens. We need a way to communicate that limitation to our data. The scales created earlier are our means of communicating that message. Earlier when we delcare a range for each scale we were defining the physical limitations such as width and height. Now that we have data we can finish out our scales with domains.
 
