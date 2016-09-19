@@ -81,6 +81,8 @@ Length happens to be one of the best if not the best tool for comparing factors 
 
 #### Our Data
 
+---
+
 The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). Data.csv should also be in your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll know they use a combination of manually input data and a .tsv. To make things a bit more familiar I converted the same .tsv into a .csv.
 
 In order to make a bar chart with D3 your data needs two ingredients. Your data needs [both](http://regentsprep.org/regents/math/algebra/ad1/qualquant.htm) a qualitative and quantitative dimension. By this I mean you need a column with [categories](https://en.wikipedia.org/wiki/Categorical_variable) and a column with values. Idealy the data will be rolled up to one row per category. Those familar with SQL will think about this as a [GROUP BY](http://www.w3schools.com/sql/sql_groupby.asp) clause. JS practitioners may think of this one-to-one structure as a key-value pair.
@@ -90,6 +92,8 @@ Notice our data only has one row per letter...
 ![data-csv](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data-csv.png)
 
 #### What Message Do We Want to Communicate
+
+---
 
 The choice we have to make is between respecting the order of the letters in the alphabet (see [ordinal data](https://en.wikipedia.org/wiki/Ordinal_data)) or sort them by the measure defining the length of our bars. I would make the argument for sorting. I think sorting relieves a huge amount of work. Those reading our chart have plenty to make sense of already. Why not sort so the letters most frequently used pop out immediately?
 
@@ -116,6 +120,8 @@ Empty out the index.html file, if it isn't already, and copy/paste the code abov
 ![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/empty-dom.png)
 
 #### Title
+
+---
 
 Every chart has a role to play. How do we know what this chart is meant to do? One way is by giving your chart a clear title. We'll do this with a simple p tag.
 
@@ -161,6 +167,8 @@ Don't worry about the transform attribute for now. We will get into more later o
 
 #### Create Scales and Axis
 
+---
+
 Some say scales are the most features of the D3 library. In this context, we will use them to convert data into to pixels, but they can be used for much much more.
 
 Think of scales as a function translating data space into screen space. If that still doesn't resonate think about metric conversions. Those from the states who travel to other countries quickly realize distance is measured differently. Someone used to gauging distance in miles would feed kilometers into a converter and get miles to get a read out in miles. D3 scales take in our data and return a number that fits our our screen.
@@ -202,6 +210,8 @@ Nothing changing visually, because we haven't called the scales.
 
 #### We're Ready for the Data
 
+---
+
 ```javascript
 d3.csvParse("data.csv", function(error, data) {
   if (error) throw error;
@@ -228,6 +238,8 @@ You still won't see anything different aesthetically.
 
 #### Declare the Limits of Our Data
 
+---
+
 ![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
 
 How do we specify were the ends of our bars should land?
@@ -246,6 +258,8 @@ Copy/paste the code above just beneath the data.sort code block, but before the 
 This code is adding domains to our x and y scales. To our x scale we want a domain from 0 to the heighest frequency value. For our y scale we just want to map each letter to an index value and give each row a bit of space in between. The paddingInner defines what percent of each row should be left for spacing in between the bars.
 
 #### Append Our Axis
+
+---
 
 Get excited, this is the first step where we get to see something on the screen!
 
@@ -271,6 +285,8 @@ Everything in these code blocks you've been introduced to before except the .cal
 
 #### Draw Some Rectangles!
 
+---
+
 It's getting really fun now. We see some stuff on our screen and we can imagine where our bars are going to be. All that's left is putting them there and styling.
 
 ```javascript
@@ -293,6 +309,8 @@ Copy/paste the code above just below the last block you copy/pasted, but still i
 This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as bar and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
 
 #### Time to Pain With CSS
+
+---
 
 In the intial html code I passed off to you, there was an opening and closing style tag. I want you to take the code below and place it in between those two tags.
 
@@ -351,6 +369,8 @@ For good measure place the line of code above in between line 3 and 4 of your in
 ![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/you-did-it.png)
 
 If you'd like understand more about how CSS works please visit <howylearn.com> for more details.
+
+## You did it!!!
 
 ### Enhancements
 
