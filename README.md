@@ -26,7 +26,7 @@ Clone or download this repository to a directory you would like to work from by 
 
 This presents a few options.
 
-![Clone or download options]()
+![Clone or download options](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download-options.png)
 
 I like to take the terminal route by copying the url and cloning the repo with terminal. You will want to approach this differently if you don't have [git](https://git-scm.com/downloads) installed and don't want spend the time right now setting it up. However, I will encourage to take some time getting familiar with git. It's an amazing tool. By far the most heavily utilized software engineered for open source contribution.
 
@@ -87,7 +87,7 @@ In order to make a bar chart with D3 your data needs two ingredients. Your data 
 
 Notice our data only has one row per letter...
 
-![data-csv]()
+![data-csv](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data-csv.png)
 
 #### What Message Do We Want to Communicate
 
@@ -113,7 +113,7 @@ For those who don't know, D3 stands for Data Driven Documents. The documents we'
 
 Empty out the index.html file, if it isn't already, and copy/paste the code above into the page.
 
-![empty](DOM)
+![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/empty-dom.png)
 
 #### Title
 
@@ -125,7 +125,7 @@ Every chart has a role to play. How do we know what this chart is meant to do? O
 
 Place the p tag inside your body tag just before the empty script tags.
 
-![chart-title]()
+![chart title](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/chart-title.png)
 
 #### Append Your svg and g to the Screen
 
@@ -151,7 +151,7 @@ var svg = d3.select("body").append("svg")
 
 Copy/paste the code above inside your script tags.
 
-![svg and g inserted]()
+![svg and g inserted](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/svg-g-inserted.png)
 
 Here we declare varibles used to set the size of our chart. We append an svg to our body and g element to the svg. Again, why we append a g element to our svg makes more sense in the [Margin Convention](https://bl.ocks.org/mbostock/3019563) documentation.
 
@@ -263,7 +263,7 @@ svg.append("g")
 
 Copy/paste this code just below the y.domain code, but inside the closing bracket.
 
-![add axis]()
+![add axis](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/add-axis.png)
 
 We just append to more g element to the intial g element positioned inside the svg. Could that sound any more abstract? One of the g elements will have the ingredients of a y-axis and the other the ingredients of an x axis, per our specifications.
 
@@ -288,7 +288,7 @@ If you have gotten this far, then you probably know what I'm going to tell you t
 
 Copy/paste the code above just below the last block you copy/pasted, but still insted the second to last closing bracket.
 
-![draw rectangles]()
+![draw rectangles](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/draw-rectangles.png)
 
 This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as bar and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
 
@@ -348,7 +348,7 @@ Save and rerun your code to see your freshly styled D3 bar chart!
 
 For good measure place the line of code above in between line 3 and 4 of your index.html document.
 
-![Congratulations]()
+![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/you-did-it.png)
 
 If you'd like understand more about how CSS works please visit <howylearn.com> for more details.
 
