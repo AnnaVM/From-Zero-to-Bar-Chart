@@ -1,6 +1,13 @@
 # Zero to Bar Chart with D3 v4
 
-### Who is this not for
+### Who is this for?
+
+This is a walk through for those just getting started with the D3 library or those familiar with the library looking for an alternative to the standard Let's Make a Bar Chart Part [I](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIJTAD&url=https%3A%2F%2Fbl.ocks.org%2Fmbostock%2F7322386&usg=AFQjCNHLhVkHcxaoCx1W3A8aCLs4oU2Hqg&sig2=ITg7T7CwsOUK1U4hlDIgWw&bvm=bv.133178914,d.cGc), [II](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIJzAC&url=https%3A%2F%2Fbost.ocks.org%2Fmike%2Fbar%2F2%2F&usg=AFQjCNHn4eRIkc_-KCxfy5VuH9hhKwxnmA&sig2=-MwD9VXrlgZFNpErVXM4XA&bvm=bv.133178914,d.cGc) and [III](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIIzAB&url=https%3A%2F%2Fbost.ocks.org%2Fmike%2Fbar%2F3%2F&usg=AFQjCNFNoLbYperkYjMEOdv2W9sUMjBTRQ&sig2=FG2GzLGfpUgCJLRH-yf44g&bvm=bv.133178914,d.cGc). If you haven't see those yet, you may want to start there. Not because this walk through's more difficult, but rather because those tutorials are likely to give you an even more robust foundation of knowledge.
+
+This aim of this tutorial is walk you through the create of a bar chart with v4 and little more.
+
+### Who is this NOT for?
+
 - Experts D3 developers
 - Those comfortable feeling there own way around the documentation
 - Practitioners looking for D3 development best practice
