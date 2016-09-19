@@ -20,6 +20,10 @@ Feel free to experiment as we develop. Tweaking the code can help drive to conce
 
 ### Installation
 
+Clone or download this repository to a directory you would like to work from by clicking the Clone or download button on the repos' landing page.
+
+![Clone or download]()
+
 ### Why bar charts?
 
 Our goal when visualizing data is to get a message across to the viewer as efficiently and accurately as possible. To do this we need to choose our encodings wisely. Not always, but very often, bar charts are a great choice.
