@@ -81,9 +81,9 @@ The attributes you choose affect how your data is precieved. Duh, right? Well, n
 
 # Our Data
 
-The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). Data.csv should also be in your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll know they use a combination of manually input data and a .tsv. To make things a bit more familiar I converted the same .tsv into a .csv.
+The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). You should also be able to reference data.csv from your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll recall manually input data used and a .tsv. To make things more familiar I converted the .tsv used in that guide into a .csv.
 
-In order to make a bar chart with D3 your data needs two ingredients. Your data needs [both](http://regentsprep.org/regents/math/algebra/ad1/qualquant.htm) a qualitative and quantitative dimension. By this I mean you need a column with [categories](https://en.wikipedia.org/wiki/Categorical_variable) and a column with values. Idealy the data will be rolled up to one row per category. Those familar with SQL will think about this as a [GROUP BY](http://www.w3schools.com/sql/sql_groupby.asp) clause. JS practitioners may think of this one-to-one structure as a key-value pair.
+To make a bar chart our data needs two ingredients. Your data needs [both](http://regentsprep.org/regents/math/algebra/ad1/qualquant.htm) a qualitative and quantitative dimension. By this I mean you need a column with [categories](https://en.wikipedia.org/wiki/Categorical_variable) and a column with values. Idealy the data will be rolled up to one row per category. Those familar with SQL can think about this as a [GROUP BY](http://www.w3schools.com/sql/sql_groupby.asp) clause. JS practitioners may think of this one-to-one structure as a JSON [key-value pair](http://stackoverflow.com/questions/3715644/key-value-pairs-using-json).
 
 Notice our data only has one row per letter...
 
@@ -95,9 +95,7 @@ Notice our data only has one row per letter...
 
 # Think About Your Messaging
 
-The choice we have to make is between respecting the order of the letters in the alphabet (see [ordinal data](https://en.wikipedia.org/wiki/Ordinal_data)) or sort them by the measure defining the length of our bars. I would make the argument for sorting. I think sorting relieves a huge amount of work. Those reading our chart have plenty to make sense of already. Why not sort so the letters most frequently used pop out immediately?
-
-To leave the letters unsorted does tell the story of where along the alphabet the most letters used lie, but that isn't the message here. We could also encode the vowels with a different hue so they stand out. At the end of the day, the success of our chart depends how effectively we communicate the important messages.
+We have a choice to make between respecting the implicit order of the letters in the alphabet (see [ordinal data](https://en.wikipedia.org/wiki/Ordinal_data)) or sorting them by how often their used. For the sake of argument, I'm going to side with the choice of sorting. Sorting relieves a huge amount of work for those reading our chart. Even though our chart's relatively simple unsorted bars are much harder to reason. Sorting brings those letters most frequently used to readers attention immediately.
 
 [(back to Work Flow)](#work-flow)
 
