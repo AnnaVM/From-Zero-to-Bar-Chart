@@ -67,22 +67,18 @@ The attributes you choose affect how your data is precieved. Duh, right? Well, n
 
 ### Work flow
 
-1. [Gather the data](#our-data)
-2. Think about your messaging
+1. [Gather the Data](#our-data)
+2. [Think About Your Messaging](#think-about-your-massaging)
 3. Code
-		1. Put up the raw HTML skeleton
-    2. Title
-    3. Create Space for Your Chart
-    4. Position a g element using the margin convention
-    5. Declare scales and axis
-    6. Bring in the data
-    7. Sort the data to bring our insight to the viewers attention
-    8. Set the domain
-    9. Append Our Axis
-    10. Add bars
-    11. Apply Styles
-
-### Let's Get Going
+		1. [Put up a Skeleton](#put-up-a-skeleton)
+    2. [Title](#title)
+    3. [Create Space for Your Chart](#create-space-for-your-chart)
+    4. [Create Scales and Axis](#create-scales-and-axis)
+    5. [Bring in the Data](#bring-in-the-data)
+    6. [Set the Domain](#set-the-domain)
+    7. [Draw the Axis](#draw-the-axis)
+    8. [Render Rectangles](#render-rectangles)
+    9. [Apply Styles](#apply-styles)
 
 # Our Data
 
@@ -96,7 +92,7 @@ Notice our data only has one row per letter...
 
 ---
 
-#### What Message Do We Want to Communicate
+# Think About Your Messaging
 
 The choice we have to make is between respecting the order of the letters in the alphabet (see [ordinal data](https://en.wikipedia.org/wiki/Ordinal_data)) or sort them by the measure defining the length of our bars. I would make the argument for sorting. I think sorting relieves a huge amount of work. Those reading our chart have plenty to make sense of already. Why not sort so the letters most frequently used pop out immediately?
 
@@ -104,7 +100,7 @@ To leave the letters unsorted does tell the story of where along the alphabet th
 
 ---
 
-#### Bare Bones DOM
+# Put up a Skeleton
 
 For those who don't know, D3 stands for Data Driven Documents. The documents we're driving with data live in the DOM. The first thing you want to as you start to code involves putting up some scaffolding.
 
@@ -126,7 +122,7 @@ Empty out the index.html file, if it isn't already, and copy/paste the code abov
 
 ---
 
-#### Title
+# Title
 
 Every chart has a role to play. How do we know what this chart is meant to do? One way is by giving your chart a clear title. We'll do this with a simple p tag.
 
@@ -140,7 +136,7 @@ Place the p tag inside your body tag just before the empty script tags.
 
 ---
 
-#### Append Your svg and g to the Screen
+# Create Space for Your Chart
 
 Now that we know what our chart's meant to do we need space to tell our story. For that we need to place an svg element on the screen with a smaller g placed inside. You can read more about this convention [here](https://bl.ocks.org/mbostock/3019563).
 
@@ -174,7 +170,7 @@ Don't worry about the transform attribute for now. We will get into more later o
 
 ---
 
-#### Create Scales and Axis
+# Create Scales and Axis
 
 Some say scales are the most features of the D3 library. In this context, we will use them to convert data into to pixels, but they can be used for much much more.
 
@@ -217,7 +213,7 @@ Nothing changing visually, because we haven't called the scales.
 
 ---
 
-#### We're Ready for the Data
+# Bring in the Data
 
 ```javascript
 d3.csvParse("data.csv", function(error, data) {
@@ -245,7 +241,7 @@ You still won't see anything different aesthetically.
 
 ---
 
-#### Declare the Limits of Our Data
+# Set the Domain
 
 ![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
 
@@ -266,7 +262,7 @@ This code is adding domains to our x and y scales. To our x scale we want a doma
 
 ---
 
-#### Append Our Axis
+# Draw the Axis
 
 Get excited, this is the first step where we get to see something on the screen!
 
@@ -292,7 +288,7 @@ Everything in these code blocks you've been introduced to before except the .cal
 
 ---
 
-#### Draw Some Rectangles!
+# Render Rectangles
 
 It's getting really fun now. We see some stuff on our screen and we can imagine where our bars are going to be. All that's left is putting them there and styling.
 
@@ -317,7 +313,7 @@ This code selects all of the bars, binds the .bar selection to data, enters the 
 
 ---
 
-#### Time to Pain With CSS
+# Apply Styles
 
 In the intial html code I passed off to you, there was an opening and closing style tag. I want you to take the code below and place it in between those two tags.
 
@@ -376,8 +372,6 @@ For good measure place the line of code above in between line 3 and 4 of your in
 ![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/you-did-it.png)
 
 If you'd like understand more about how CSS works please visit <howylearn.com> for more details.
-
-## You did it!!!
 
 ### Enhancements
 
