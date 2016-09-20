@@ -55,19 +55,19 @@ You can navigate to developer tool by following the selections above in your own
 
 ![developer tool](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/developer-tools.png)
 
-### Why bar charts?
+### Why build a bar chart?
 
-Our goal when visualizing data is to get a message across to the viewer as efficiently and accurately as possible. To do this we need to choose our encodings wisely. Not always, but very often, bar charts are a great choice.
+Our goal when visualizing data is to get a message across to the viewer as efficiently and accurately as possible. To do this we need to choose our encodings wisely. Not always, but very often, **bar charts** are the best choice.
 
 ![Preattentive Attributes](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/preattentive-attributes.png)
 
-The image above displays several attributes we can manipulate with our data. These preattentive attributes can be used to bring attention to important areas or accidentally misinform, if we aren't careful. The attributes you choose affect how your data is precieved. Duh, right? Well, not every encoding is created equally.
+The image above displays several attributes we can manipulate with our data in D3. These preattentive attributes draw our attention to important areas or, if we aren't careful, accidentally the wrong information.
 
-Length happens to be one of the best if not the best tool for comparing factors along one dimension. The simplest solution is sometimes the best solution.
+The attributes you choose affect how your data is precieved. Duh, right? Well, not every encoding is created equally. Length happens to be one of the best if not the best tool for comparing factors along a single measure. The simplest solution is sometimes the best.
 
 ### Work flow
 
-1. Gather the data
+1. [Gather the data](#our-data)
 2. Think about your messaging
 3. Code
 		1. Put up the raw HTML skeleton
@@ -84,7 +84,7 @@ Length happens to be one of the best if not the best tool for comparing factors 
 
 ### Let's Get Going
 
-#### Our Data
+# Our Data
 
 The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). Data.csv should also be in your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll know they use a combination of manually input data and a .tsv. To make things a bit more familiar I converted the same .tsv into a .csv.
 
