@@ -21,19 +21,19 @@ Blocks are refernces D3 developers use to learn. By contributing to [Blocks](bl.
 
 Clone or download this repository to a directory to work from by clicking "Clone or download" button on the repos' landing page.
 
-![Clone or download](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download.png)
+![Clone or download](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/clone-download.png)
 
 Clicking presents a few more options.
 
-![Clone or download options](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download-options.png)
+![Clone or download options](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/clone-download-options.png)
 
 I like to copy the url and clone the repo from the terminal. You may need to take a different approach if you don't have [git](https://git-scm.com/downloads) installed and don't want to work through the setup right now.
 
-![Clone to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-to-desktop.png)
+![Clone to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/clone-to-desktop.png)
 
 Once I see that I'm in my Desktop in the terminal I can git clone.
 
-![Cloned to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/cloned-to-desktop.png)
+![Cloned to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/cloned-to-desktop.png)
 
 Now you should see the directory in your finder after cloning. If git clone doesn't work for you, you may need to enter `sudo git clone`.
 
@@ -45,21 +45,21 @@ Once in that directory you can spin up simple server with Python. You do this be
 
 Open an incognito tab in your Chorme browser and type `localhost:8000` into the address bar.
 
-![Spin up a Simple Server](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/spin-a-simple-server.png)
+![Spin up a Simple Server](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/spin-a-simple-server.png)
 
 When we finish you'll end up with a chart that looks like the image above. At the momement be happy if you have a browser open with no errors showing up in your console.
 
-![no-errors](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/no-errors.png)
+![no-errors](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/no-errors.png)
 
 You can navigate to developer tool by following the selections above in your own incognito window or press option + command + j on your keyboard.
 
-![developer tool](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/developer-tools.png)
+![developer tool](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/developer-tools.png)
 
 ### Why build a bar chart?
 
 Our goal when visualizing data is to get a message across to the viewer as efficiently and accurately as possible. To do this we need to choose our encodings wisely. Not always, but very often, **bar charts** are the best choice.
 
-![Preattentive Attributes](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/preattentive-attributes.png)
+![Preattentive Attributes](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/preattentive-attributes.png)
 
 The image above displays several attributes we can manipulate with our data in D3. These preattentive attributes draw our attention to important areas or, if we aren't careful, accidentally the wrong information.
 
@@ -81,13 +81,13 @@ The attributes you choose affect how your data is precieved. Duh, right? Well, n
 
 # Our Data
 
-The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). You should also be able to reference data.csv from your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll recall manually input data used and a .tsv. To make things more familiar I converted the .tsv used in that guide into a .csv.
+The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/data.csv). You should also be able to reference data.csv from your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll recall manually input data used and a .tsv. To make things more familiar I converted the .tsv used in that guide into a .csv.
 
 To make a bar chart our data needs two ingredients. Your data needs [both](http://regentsprep.org/regents/math/algebra/ad1/qualquant.htm) a qualitative and quantitative dimension. By this I mean you need a column with [categories](https://en.wikipedia.org/wiki/Categorical_variable) and a column with values. Idealy the data will be rolled up to one row per category. Those familar with SQL can think about this as a [GROUP BY](http://www.w3schools.com/sql/sql_groupby.asp) clause. JS practitioners may think of this one-to-one structure as a JSON [key-value pair](http://stackoverflow.com/questions/3715644/key-value-pairs-using-json).
 
 Notice our data only has one row per letter...
 
-![data-csv](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data-csv.png)
+![data-csv](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/data-csv.png)
 
 [(back to Work Flow)](#work-flow)
 
@@ -121,7 +121,7 @@ For those who don't know, D3 stands for Data Driven Documents. The documents we'
 
 If there was already code in your index.html file, go ahead and delete it all. Then copy/paste the code above into the page.
 
-![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/empty-dom.png)
+![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/empty-dom.png)
 
 This gets you started with a blank HTML page.
 
@@ -139,7 +139,7 @@ Every chart has a role to play. How do we know what this chart does? One way is 
 
 Place the p tag in between your opening and closing body tags.
 
-![chart title](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/chart-title.png)
+![chart title](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/chart-title.png)
 
 Now you should see an unformatted title awaiting a chart.
 
@@ -171,7 +171,7 @@ var svg = d3.select("body").append("svg")
 
 Copy/paste the code above inside your script tags.
 
-![svg and g inserted](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/svg-g-inserted.png)
+![svg and g inserted](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/svg-g-inserted.png)
 
 We have declared varibles used to set the size of our chart. We appended an svg to our body and g element to the svg.
 
@@ -258,7 +258,7 @@ With or frequency data converted to a number we can also sort our bars. The rows
 
 How do we specify were the ends of our bars should land?
 
-![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
+![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/input-domain.png)
 
 D3 scales to the rescue! Earlier when we delcared a range for each scale we were defining the physical limitations such as width and height. Now that we have data we can complete our scales by adding domains.
 
@@ -295,7 +295,7 @@ svg.append("g")
 
 Copy/paste this code just below the y.domain code, but inside the closing bracket of the function reading in data.
 
-![add axis](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/add-axis.png)
+![add axis](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/add-axis.png)
 
 We just appended two more g elements to the intial g element positioned inside the svg. Could that sound any more abstract?
 
@@ -326,7 +326,7 @@ If you have gotten this far, then you probably know what I'm going to tell you t
 
 Copy/paste the code above just below the last block you copy/pasted, but inside the the closing braket of the function that read in the data.
 
-![draw rectangles](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/draw-rectangles.png)
+![draw rectangles](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/draw-rectangles.png)
 
 This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as `.bar` and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
 
@@ -390,14 +390,10 @@ Save and rerun your code to see your freshly styled D3 bar chart!
 
 For good measure place the line of code above in between line 3 and 4 of your index.html document.
 
-![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/you-did-it.png)
+![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/you-did-it.png)
 
 If you'd like understand more about how CSS works visit [Getting to Know CSS](http://learn.shayhowe.com/html-css/getting-to-know-css/).
 
 Congratulations, you did it!
 
 [(back to Work Flow)](#work-flow)
-
-### License
-
-MIT
