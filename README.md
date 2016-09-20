@@ -103,7 +103,7 @@ We have a choice to make between respecting the implicit order of the letters in
 
 # Put up a Skeleton
 
-For those who don't know, D3 stands for Data Driven Documents. The documents we're driving with data live in the DOM. The first thing you want to as you start to code involves putting up some scaffolding.
+For those who don't know, D3 stands for Data Driven Documents. The documents we're driving with data live in the DOM. So, the first thing to do is to put up the scaffolding.
 
 ```html
 <!DOCTYPE html>
@@ -117,9 +117,13 @@ For those who don't know, D3 stands for Data Driven Documents. The documents we'
 </body>
 ```
 
-Empty out the index.html file, if it isn't already, and copy/paste the code above into the page.
+> You may want to use this code as a boiler plate for future D3 development projects.
+
+If there was already code in your index.html file, go ahead and delete it all. Then copy/paste the code above into the page.
 
 ![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/empty-dom.png)
+
+This gets you started with a blank HTML page.
 
 [(back to Work Flow)](#work-flow)
 
@@ -127,15 +131,17 @@ Empty out the index.html file, if it isn't already, and copy/paste the code abov
 
 # Title
 
-Every chart has a role to play. How do we know what this chart is meant to do? One way is by giving your chart a clear title. We'll do this with a simple p tag.
+Every chart has a role to play. How do we know what this chart does? One way is by giving your chart a clear title. We'll do this with a simple p tag.
 
 ```html
 <p>Relative frequencices of the letters of the English language</p>
 ```
 
-Place the p tag inside your body tag just before the empty script tags.
+Place the p tag in between your opening and closing body tags.
 
 ![chart title](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/chart-title.png)
+
+Now you should see an unformatted title awaiting a chart.
 
 [(back to Work Flow)](#work-flow)
 
