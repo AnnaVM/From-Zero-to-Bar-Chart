@@ -49,11 +49,11 @@ Open an incognito tab in your Chorme browser and type `localhost:8000` into the 
 
 When we finish you'll end up with a chart that looks like the image above. At the momement be happy if you have a browser open with no errors showing up in your console.
 
-![no-errors]()
+![no-errors](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/no-errors.png)
 
 You can navigate to developer tool by following the selections above in your own incognito window or press option + command + j on your keyboard.
 
-![developer tool]()
+![developer tool](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/developer-tools.png)
 
 ### Why bar charts?
 
