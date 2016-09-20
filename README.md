@@ -149,7 +149,7 @@ Now you should see an unformatted title awaiting a chart.
 
 # Create Space for Your Chart
 
-Now that we know what our chart's meant to do we need space to tell our story. For that we need to place an svg element on the screen with a smaller g placed inside. You can read more about this convention [here](https://bl.ocks.org/mbostock/3019563).
+Now that we know what our chart is meant to do we need space to tell our story. For that we need to place an svg element on the screen with a g inside. You can read more about the convention we're using [here](https://bl.ocks.org/mbostock/3019563).
 
 ```javascript
 var margin = {
@@ -173,9 +173,9 @@ Copy/paste the code above inside your script tags.
 
 ![svg and g inserted](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/svg-g-inserted.png)
 
-Here we declare varibles used to set the size of our chart. We append an svg to our body and g element to the svg. Again, why we append a g element to our svg makes more sense in the [Margin Convention](https://bl.ocks.org/mbostock/3019563) documentation.
+We have declared varibles used to set the size of our chart. We appended an svg to our body and g element to the svg.
 
-Note that 960x500 are demensions rendered inside bl.ocks.org. Feel free to change the size. Personally, I'm trying to get into the habit of creating bl.ock friendly charts. So, that's why we choose those dimensions here.
+The 960x500 demensions are used in [Blocks](bl.ocks.org). To be more supportive of the community, it's nice to build charts easily ported over. Feel free to change the dimensions for the sake of experimentation or for you own reasons.
 
 Don't worry about the transform attribute for now. We will get into more later on. For now just know the translate argument takes a string in the form of (x, y) between the parenthesis.
 
