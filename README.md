@@ -256,11 +256,11 @@ With or frequency data converted to a number we can also sort our bars. The rows
 
 # Set the Domain
 
-![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
-
 How do we specify were the ends of our bars should land?
 
-D3 scales to the rescue! Earlier when we delcare a range for each scale we were defining the physical limitations such as width and height. Now that we have data we can finish out our scales with domains.
+![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
+
+D3 scales to the rescue! Earlier when we delcared a range for each scale we were defining the physical limitations such as width and height. Now that we have data we can complete our scales by adding domains.
 
 ```javascript
 x.domain([0, d3.max(data, function(d) { return d.frequency; })]);
@@ -269,9 +269,9 @@ y.domain(data.map(function(d) { return d.letter; }))
   .paddingInner(0.1);
 ```
 
-Copy/paste the code above just beneath the data.sort code block, but before the last closing bracket.
+Copy/paste the code above just beneath the data.sort code block, but before the last closing bracket of the function reading in your data.
 
-This code is adding domains to our x and y scales. To our x scale we want a domain from 0 to the heighest frequency value. For our y scale we just want to map each letter to an index value and give each row a bit of space in between. The paddingInner defines what percent of each row should be left for spacing in between the bars.
+This adds domains to our x and y scales. To our x scale we want a domain from 0 to the heighest frequency value. For our y scale we just want to map each letter to an index value and give each row a bit of space in between. The paddingInner defines what percent of each row should be left for spacing in between the bars.
 
 [(back to Work Flow)](#work-flow)
 
@@ -293,13 +293,15 @@ svg.append("g")
     .call(xAxis);
 ```
 
-Copy/paste this code just below the y.domain code, but inside the closing bracket.
+Copy/paste this code just below the y.domain code, but inside the closing bracket of the function reading in data.
 
 ![add axis](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/add-axis.png)
 
-We just append to more g element to the intial g element positioned inside the svg. Could that sound any more abstract? One of the g elements will have the ingredients of a y-axis and the other the ingredients of an x axis, per our specifications.
+We just appended two more g elements to the intial g element positioned inside the svg. Could that sound any more abstract?
 
-Everything in these code blocks you've been introduced to before except the .call(). The .call() is a method used to invoke our generators. The [.call](https://github.com/d3/d3-selection/blob/master/README.md#selection_call) is a consice way for us to call the axis functions created early while keeping them bound to our selection.
+One of the g elements will have the ingredients of a y-axis and the other the ingredients of an x axis, per our specifications.
+
+Everything in these code blocks you've been introduced to before except the .call(). The .call() is a method used to invoke our generators. The [.call](https://github.com/d3/d3-selection/blob/master/README.md#selection_call) is a consice way for us to call the axis functions created earlier while keeping them bound to our selections.
 
 [(back to Work Flow)](#work-flow)
 
@@ -320,13 +322,13 @@ svg.selectAll(".bar")
     .attr("width", function(d) { return x(d.frequency); });
 ```
 
-If you have gotten this far, then you probably know what I'm going to tell you to do by now.
+If you have gotten this far, then you probably know what I'm going to tell you to do next.
 
-Copy/paste the code above just below the last block you copy/pasted, but still insted the second to last closing bracket.
+Copy/paste the code above just below the last block you copy/pasted, but inside the the closing braket of the function that read in the data.
 
 ![draw rectangles](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/draw-rectangles.png)
 
-This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as bar and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
+This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as `.bar` and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
 
 [(back to Work Flow)](#work-flow)
 
@@ -334,7 +336,7 @@ This code selects all of the bars, binds the .bar selection to data, enters the 
 
 # Apply Styles
 
-In the intial html code I passed off to you, there was an opening and closing style tag. I want you to take the code below and place it in between those two tags.
+In the intial html code there was an opening and closing style tag inside the head tag. I want you to take the code below and place it in between those two style tags.
 
 ```css
 p {
@@ -390,13 +392,11 @@ For good measure place the line of code above in between line 3 and 4 of your in
 
 ![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/you-did-it.png)
 
-If you'd like understand more about how CSS works please visit <howylearn.com> for more details.
+If you'd like understand more about how CSS works visit [Getting to Know CSS](http://learn.shayhowe.com/html-css/getting-to-know-css/).
 
 Congratulations, you did it!
 
 [(back to Work Flow)](#work-flow)
-
-### Enhancements
 
 ### License
 
