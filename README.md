@@ -185,9 +185,7 @@ Don't worry about the transform attribute for now. We will get into more later o
 
 # Create Scales and Axis
 
-Some say scales are the most features of the D3 library. In this context, we will use them to convert data into to pixels, but they can be used for much much more.
-
-Think of scales as a function translating data space into screen space. If that still doesn't resonate think about metric conversions. Those from the states who travel to other countries quickly realize distance is measured differently. Someone used to gauging distance in miles would feed kilometers into a converter and get miles to get a read out in miles. D3 scales take in our data and return a number that fits our our screen.
+Some say scales are the most important features of the D3 library. In the context of a bar chart, we will use them to convert data into to pixels. This translations helps us create nicely size rectangles, but the scales can be applied to much more interesting applications.
 
 ```javascript
 var x = d3.scaleLinear()
@@ -199,11 +197,9 @@ var y = d3.scaleBand()
 
 Place this code inside the script tags, just underneath the last block you copy/pasted.
 
-This code is declaring a range for x from 0 to the width we've specified. The range is referring to screen space. Since we're creating horizontal bars, x is what we'll stretch our measure along. And since our measure is a continuous number we want to use a linear scale. We feed in a some value from our data and we'll get that value returned is if it were place on a number line. In this case our number line is the x-axis.
+The code above declares an x.range(screen space) from 0 to width. The x-axis is the axis we'll spread our horizontal bars across. And since frequency is a [continuous number](http://stattrek.com/statistics/dictionary.aspx?definition=Continuous%20variable) we want to use a [linear scale](https://github.com/d3/d3-scale/blob/master/README.md#scaleLinear).
 
-The y-axis is a bit different. We basically want a discrete row for each letter. In D3 those rows are called bands, when we're building a bar chart. If we were plotting circles we would be using scalePoint. Without getting into bands too deeply, I would encourage you to think about these bands as the space in between one letter and the next.
-
-Also, note that we are only setting the range. We want to set up as much as we can before introducing the data as possible.
+The y-axis is a bit different. What we want is a discrete row for each letter. When building a bar chart our rows are referred to as [bands](https://github.com/d3/d3-scale/blob/master/README.md#scaleBand). If we were plotting circles we would be using [scalePoint](https://github.com/d3/d3-scale/blob/master/README.md#scalePoint).
 
 Now let's declare those axis generators.
 
@@ -216,13 +212,13 @@ var yAxis = d3.axisLeft(y);
 
 You can place this just below the last code block you copy/pasted.
 
-Axis generators in D3 do a lot of work. They create text labels, tick marks and zero lines. Whether you want to see all those elements is your call, but D3 give them to you by default.
+Axis generators in D3 do a lot of work. They create paths, tick, text and lines for us to format further.
 
-For our xAxis we chose axisTop so our text shows up above the line. The x argument we feed in is the scale created earlier. Since our measure is a percentage we can format the ticks as such with precision to the tenths place.
+For our xAxis we chose axisTop to position our text above the line. The x argument we feed in is the scale created earlier. With a fractional measure we want to format the text over the ticks as percentages with a precision to the tenths place.
 
-The only specification we state in our y-axis is that we want the text to show on the left and to use the y scale created earlier.
+The only specification we pass to our y-axis is to show the text on the left and to use the y scale created earlier.
 
-Nothing changing visually, because we haven't called the scales.
+Nothing will change visually before we call the scales.
 
 [(back to Work Flow)](#work-flow)
 
