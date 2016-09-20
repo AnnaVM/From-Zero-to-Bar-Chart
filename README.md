@@ -242,13 +242,13 @@ d3.csvParse("data.csv", function(error, data) {
 
 Insert this code just below the last block you copy/pasted.
 
-Here we use a helpful feature of the D3 API to parse data in a csv format.
+Here we use a helpful feature of the D3 API to parse csv data. D3 also has parsers for .tsv, .json and .dsv which as custom delimeted value.
 
-Once the data is read in we need to do a bit more processing. Csv files store all your data as strings. This can be a probably when you need to calculate the width of bars. Thankfully, this data set is small, so a simple loop over each frequency value can convert them from a string to a number.
+Once the data is read we need to do a bit more processing. Be defual csv files store all your data as strings. This can be a problem for calculations, like the width of our bars. Thankfully, the data set is small, so a simple loop over each value will convert them from a string to a number.
 
-With or frequency data converted to a number we can also sort our bars. Remember, the reason we sort our bars is to bring the most important information to our viewers attention as quickly as possible.
+With or frequency data converted to a number we can also sort our bars. The rows of our data wouldn't sort correctly if we hadn't converted the strings to numbers before sorting.
 
-You still won't see anything different aesthetically.
+> Remember, the reason we sort our bars is to bring the most important information to our viewers attention as quickly as possible.
 
 [(back to Work Flow)](#work-flow)
 
