@@ -89,6 +89,8 @@ Notice our data only has one row per letter...
 
 ![data-csv](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data-csv.png)
 
+[(back to Work Flow)](#work-flow)
+
 ---
 
 # Think About Your Messaging
@@ -96,6 +98,8 @@ Notice our data only has one row per letter...
 The choice we have to make is between respecting the order of the letters in the alphabet (see [ordinal data](https://en.wikipedia.org/wiki/Ordinal_data)) or sort them by the measure defining the length of our bars. I would make the argument for sorting. I think sorting relieves a huge amount of work. Those reading our chart have plenty to make sense of already. Why not sort so the letters most frequently used pop out immediately?
 
 To leave the letters unsorted does tell the story of where along the alphabet the most letters used lie, but that isn't the message here. We could also encode the vowels with a different hue so they stand out. At the end of the day, the success of our chart depends how effectively we communicate the important messages.
+
+[(back to Work Flow)](#work-flow)
 
 ---
 
@@ -119,6 +123,8 @@ Empty out the index.html file, if it isn't already, and copy/paste the code abov
 
 ![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/empty-dom.png)
 
+[(back to Work Flow)](#work-flow)
+
 ---
 
 # Title
@@ -132,6 +138,8 @@ Every chart has a role to play. How do we know what this chart is meant to do? O
 Place the p tag inside your body tag just before the empty script tags.
 
 ![chart title](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/chart-title.png)
+
+[(back to Work Flow)](#work-flow)
 
 ---
 
@@ -166,6 +174,8 @@ Here we declare varibles used to set the size of our chart. We append an svg to 
 Note that 960x500 are demensions rendered inside bl.ocks.org. Feel free to change the size. Personally, I'm trying to get into the habit of creating bl.ock friendly charts. So, that's why we choose those dimensions here.
 
 Don't worry about the transform attribute for now. We will get into more later on. For now just know the translate argument takes a string in the form of (x, y) between the parenthesis.
+
+[(back to Work Flow)](#work-flow)
 
 ---
 
@@ -210,6 +220,8 @@ The only specification we state in our y-axis is that we want the text to show o
 
 Nothing changing visually, because we haven't called the scales.
 
+[(back to Work Flow)](#work-flow)
+
 ---
 
 # Bring in the Data
@@ -238,6 +250,8 @@ With or frequency data converted to a number we can also sort our bars. Remember
 
 You still won't see anything different aesthetically.
 
+[(back to Work Flow)](#work-flow)
+
 ---
 
 # Set the Domain
@@ -258,6 +272,8 @@ y.domain(data.map(function(d) { return d.letter; }))
 Copy/paste the code above just beneath the data.sort code block, but before the last closing bracket.
 
 This code is adding domains to our x and y scales. To our x scale we want a domain from 0 to the heighest frequency value. For our y scale we just want to map each letter to an index value and give each row a bit of space in between. The paddingInner defines what percent of each row should be left for spacing in between the bars.
+
+[(back to Work Flow)](#work-flow)
 
 ---
 
@@ -285,6 +301,8 @@ We just append to more g element to the intial g element positioned inside the s
 
 Everything in these code blocks you've been introduced to before except the .call(). The .call() is a method used to invoke our generators. The [.call](https://github.com/d3/d3-selection/blob/master/README.md#selection_call) is a consice way for us to call the axis functions created early while keeping them bound to our selection.
 
+[(back to Work Flow)](#work-flow)
+
 ---
 
 # Render Rectangles
@@ -309,6 +327,8 @@ Copy/paste the code above just below the last block you copy/pasted, but still i
 ![draw rectangles](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/draw-rectangles.png)
 
 This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as bar and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
+
+[(back to Work Flow)](#work-flow)
 
 ---
 
@@ -371,6 +391,10 @@ For good measure place the line of code above in between line 3 and 4 of your in
 ![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/you-did-it.png)
 
 If you'd like understand more about how CSS works please visit <howylearn.com> for more details.
+
+Congratulations, you did it!
+
+[(back to Work Flow)](#work-flow)
 
 ### Enhancements
 
