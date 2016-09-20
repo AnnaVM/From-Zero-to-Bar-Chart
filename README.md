@@ -1,52 +1,59 @@
 # Zero to Bar Chart with D3 v4
 
-### Who is this for?
+### Who this is for?
 
-This is a walk through for those just getting started with the D3 library or those familiar with the library looking for an alternative to the standard Let's Make a Bar Chart Part [I](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIJTAD&url=https%3A%2F%2Fbl.ocks.org%2Fmbostock%2F7322386&usg=AFQjCNHLhVkHcxaoCx1W3A8aCLs4oU2Hqg&sig2=ITg7T7CwsOUK1U4hlDIgWw&bvm=bv.133178914,d.cGc), [II](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIJzAC&url=https%3A%2F%2Fbost.ocks.org%2Fmike%2Fbar%2F2%2F&usg=AFQjCNHn4eRIkc_-KCxfy5VuH9hhKwxnmA&sig2=-MwD9VXrlgZFNpErVXM4XA&bvm=bv.133178914,d.cGc) and [III](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIIzAB&url=https%3A%2F%2Fbost.ocks.org%2Fmike%2Fbar%2F3%2F&usg=AFQjCNFNoLbYperkYjMEOdv2W9sUMjBTRQ&sig2=FG2GzLGfpUgCJLRH-yf44g&bvm=bv.133178914,d.cGc). If you haven't see those yet, you may want to start there. Not because this walk through's more difficult, but rather because those tutorials are likely to give you an even more robust foundation of knowledge.
+This is a walk through for those just getting started with the D3 library or those familiar with the library looking for an alternative to the standard Let's Make a Bar Chart Part [I](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIJTAD&url=https%3A%2F%2Fbl.ocks.org%2Fmbostock%2F7322386&usg=AFQjCNHLhVkHcxaoCx1W3A8aCLs4oU2Hqg&sig2=ITg7T7CwsOUK1U4hlDIgWw&bvm=bv.133178914,d.cGc), [II](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIJzAC&url=https%3A%2F%2Fbost.ocks.org%2Fmike%2Fbar%2F2%2F&usg=AFQjCNHn4eRIkc_-KCxfy5VuH9hhKwxnmA&sig2=-MwD9VXrlgZFNpErVXM4XA&bvm=bv.133178914,d.cGc) and [III](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjclImNmZzPAhVD3mMKHUKOCQkQjBAIIzAB&url=https%3A%2F%2Fbost.ocks.org%2Fmike%2Fbar%2F3%2F&usg=AFQjCNFNoLbYperkYjMEOdv2W9sUMjBTRQ&sig2=FG2GzLGfpUgCJLRH-yf44g&bvm=bv.133178914,d.cGc). If you haven't see those guides yet, you may want to start there. Not because this walk through's more difficult, but rather because those tutorials are likely to give you an even more robust foundation of knowledge.
 
-This aim of this tutorial is walk you through the create of a bar chart with v4 and little more.
-
-### Who is this NOT for?
+### Who this is NOT for?
 
 - Experts D3 developers
-- Those comfortable feeling there own way around the documentation
-- Practitioners looking for D3 development best practice
+- Practitioners looking for D3 development best practices
 
-### How to use this
+### How to use
 
-Before you get going open up your favorite text editor, browser and the console. I haven't tested this code on any other environments than the one I am currently working with. If you have a Mac and would like to mirror my tool set use [Sublime Text](https://www.sublimetext.com/3) and [Chrome](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&sqi=2&ved=0ahUKEwijzfmCnJzPAhUhHGMKHQHmDt0QFggqMAE&url=https%3A%2F%2Fwww.google.com%2Fchrome%2Fbrowser%2Fdesktop%2F&usg=AFQjCNEnCNpcuwbjwWkR_ZzY4O_v0ORT9A&sig2=PvJ2rGXR-yg4A3IPq-4Icw&bvm=bv.133178914,d.cGc). Sublime Text and Chrome also work on PCs, but the console will be a bit different.
+Before you get going, open up your favorite text editor, browser and the console. Caution, I haven't tested this code on any environments other than my own. If you have a Mac and would like to mirror my environment use [Sublime Text](https://www.sublimetext.com/3) and [Chrome](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&sqi=2&ved=0ahUKEwijzfmCnJzPAhUhHGMKHQHmDt0QFggqMAE&url=https%3A%2F%2Fwww.google.com%2Fchrome%2Fbrowser%2Fdesktop%2F&usg=AFQjCNEnCNpcuwbjwWkR_ZzY4O_v0ORT9A&sig2=PvJ2rGXR-yg4A3IPq-4Icw&bvm=bv.133178914,d.cGc). Sublime Text and Chrome also work on PCs, but the console will be a bit different.
 
-Feel free to experiment as we develop. Tweaking the code can help drive to concepts home and reveal potential gaps in understanding you wouldn't have realized otherwise. Once finished, you should do us all a favor and [create you own block](https://bost.ocks.org/mike/block/). Blocks are refernces all D3 developers use to learn and up there skills. By contributing to bl.ocks.or your adding ideas to a growing repository, making a portfolio for yourself and an easy refernce to past work you've done.
+Feel free to experiment as we develop. Tweaking the code can help drive concepts home and reveal potential gaps in understanding that wouldn't have been realized otherwise. Once finished do us all a favor and [create you own block](https://bost.ocks.org/mike/block/).
+
+Blocks are refernces D3 developers use to learn. By contributing to [Blocks](bl.ocks.org) your adding ideas to a growing repository, making a portfolio for yourself and an easy refernce to past work you've done.
 
 ### Installation
 
-Clone or download this repository to a directory you would like to work from by clicking the Clone or download button on the repos' landing page.
+Clone or download this repository to a directory to work from by clicking "Clone or download" button on the repos' landing page.
 
 ![Clone or download](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download.png)
 
-This presents a few options.
+Clicking presents a few more options.
 
 ![Clone or download options](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download-options.png)
 
-I like to take the terminal route by copying the url and cloning the repo with terminal. You will want to approach this differently if you don't have [git](https://git-scm.com/downloads) installed and don't want spend the time right now setting it up. However, I will encourage to take some time getting familiar with git. It's an amazing tool. By far the most heavily utilized software engineered for open source contribution.
+I like to copy the url and clone the repo from the terminal. You may need to take a different approach if you don't have [git](https://git-scm.com/downloads) installed and don't want to work through the setup right now.
 
 ![Clone to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-to-desktop.png)
 
-For this example, I'll clone the repo onto my desktop.
+Once I see that I'm in my Desktop in the terminal I can git clone.
 
 ![Cloned to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/cloned-to-desktop.png)
 
-You should see this directory in your finder after cloning. If git clone doesn't work for you, you may need to enter sudo git clone. To save yourself from entering your password on every future git clone you'll want to set up [ssh-agent](http://stackoverflow.com/questions/10054318/how-to-provide-username-and-password-when-run-git-clone-gitremote-git), but this can be saved for later.
+Now you should see the directory in your finder after cloning. If git clone doesn't work for you, you may need to enter `sudo git clone`.
 
-Now type cd from-zero-to-bar-chart in terminal to make that your active directory.
+> To save yourself from entering your password on every future git clone you'll want to set up [ssh-agent](http://stackoverflow.com/questions/10054318/how-to-provide-username-and-password-when-run-git-clone-gitremote-git), but this can be saved for later.
 
-Once in that directory you can spin up simple server with Python. You do this be typing ptyhon -m SimpleHTTPServer in you terminal.
+Now type `cd from-zero-to-bar-chart` in terminal to make that your active directory.
 
-Open an incognito tab in your Chorme browser and type localhost:<and the active port> into the address bar.
+Once in that directory you can spin up simple server with Python. You do this be typing `ptyhon -m SimpleHTTPServer 8000` in you terminal.
+
+Open an incognito tab in your Chorme browser and type `localhost:8000` into the address bar.
 
 ![Spin up a Simple Server](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/spin-a-simple-server.png)
 
-The finished product looks thusly :) Ready to walk through it step by step?
+When we finish you'll end up with a chart that looks like the image above. At the momement be happy if you have a browser open with no errors showing up in your console.
+
+![no-errors]()
+
+You can navigate to developer tool by following the selections above in your own incognito window or press option + command + j on your keyboard.
+
+![developer tool]()
 
 ### Why bar charts?
 
@@ -77,11 +84,7 @@ Length happens to be one of the best if not the best tool for comparing factors 
 
 ### Let's Get Going
 
----
-
 #### Our Data
-
----
 
 The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). Data.csv should also be in your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll know they use a combination of manually input data and a .tsv. To make things a bit more familiar I converted the same .tsv into a .csv.
 
