@@ -22,7 +22,31 @@ Feel free to experiment as we develop. Tweaking the code can help drive to conce
 
 Clone or download this repository to a directory you would like to work from by clicking the Clone or download button on the repos' landing page.
 
-![Clone or download]()
+![Clone or download](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download.png)
+
+This presents a few options.
+
+![Clone or download options](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-download-options.png)
+
+I like to take the terminal route by copying the url and cloning the repo with terminal. You will want to approach this differently if you don't have [git](https://git-scm.com/downloads) installed and don't want spend the time right now setting it up. However, I will encourage to take some time getting familiar with git. It's an amazing tool. By far the most heavily utilized software engineered for open source contribution.
+
+![Clone to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/clone-to-desktop.png)
+
+For this example, I'll clone the repo onto my desktop.
+
+![Cloned to desktop](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/cloned-to-desktop.png)
+
+You should see this directory in your finder after cloning. If git clone doesn't work for you, you may need to enter sudo git clone. To save yourself from entering your password on every future git clone you'll want to set up [ssh-agent](http://stackoverflow.com/questions/10054318/how-to-provide-username-and-password-when-run-git-clone-gitremote-git), but this can be saved for later.
+
+Now type cd from-zero-to-bar-chart in terminal to make that your active directory.
+
+Once in that directory you can spin up simple server with Python. You do this be typing ptyhon -m SimpleHTTPServer in you terminal.
+
+Open an incognito tab in your Chorme browser and type localhost:<and the active port> into the address bar.
+
+![Spin up a Simple Server](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/spin-a-simple-server.png)
+
+The finished product looks thusly :) Ready to walk through it step by step?
 
 ### Why bar charts?
 
@@ -30,16 +54,14 @@ Our goal when visualizing data is to get a message across to the viewer as effic
 
 ![Preattentive Attributes](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/preattentive-attributes.png)
 
-The image above displays several attributes we can manipulate with our data. Which attributes you choose will affect how your data is precieved. Duh, right? Well, not every encoding is created equally.
+The image above displays several attributes we can manipulate with our data. These preattentive attributes can be used to bring attention to important areas or accidentally misinform, if we aren't careful. The attributes you choose affect how your data is precieved. Duh, right? Well, not every encoding is created equally.
 
-Length happens to be one of the best, if not the best, tool for comparing factors along one dimension. Sometimes the best solution is the simplest.
+Length happens to be one of the best if not the best tool for comparing factors along one dimension. The simplest solution is sometimes the best solution.
 
 ### Work flow
-1. Get the data
-    * Categorical: What factors will you aggregate your data by.
-    * Quantitative: Choose a measure to define the weight of visual encoding.
+
+1. Gather the data
 2. Think about your messaging
-    * When you create a bar chart you are each bar has a different length. Meaning each bar has a different ability to grab our attention. We want to create an axis such that each bar has as much length as possible. The limit here is the size of your screen. We can also sort our bars. Sorting the bars properly brings the most important information to our attention that much faster.
 3. Code
 		1. Put up the raw HTML skeleton
     2. Title
@@ -55,19 +77,33 @@ Length happens to be one of the best, if not the best, tool for comparing factor
 
 ### Let's Get Going
 
+---
+
 #### Our Data
 
-We're working with a csv file you can access [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). You may notice that the canonicle Let's Make a Bar Chart uses a tsv file. I wanted to make this walk through even more universal ,so I converted that file into a csv for you.
+---
+
+The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). Data.csv should also be in your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll know they use a combination of manually input data and a .tsv. To make things a bit more familiar I converted the same .tsv into a .csv.
+
+In order to make a bar chart with D3 your data needs two ingredients. Your data needs [both](http://regentsprep.org/regents/math/algebra/ad1/qualquant.htm) a qualitative and quantitative dimension. By this I mean you need a column with [categories](https://en.wikipedia.org/wiki/Categorical_variable) and a column with values. Idealy the data will be rolled up to one row per category. Those familar with SQL will think about this as a [GROUP BY](http://www.w3schools.com/sql/sql_groupby.asp) clause. JS practitioners may think of this one-to-one structure as a key-value pair.
+
+Notice our data only has one row per letter...
+
+![data-csv](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data-csv.png)
+
+---
 
 #### What Message Do We Want to Communicate
 
-Like I said above, bar charts always have an angle. Since our data is ordinal by nature, we have a choice. And what I mean by ordinal is that there is an implied order. Other examples of ordinal data are the months of the year and ranking of Olymipic Metals. The alphabet has an implied order as well.
+The choice we have to make is between respecting the order of the letters in the alphabet (see [ordinal data](https://en.wikipedia.org/wiki/Ordinal_data)) or sort them by the measure defining the length of our bars. I would make the argument for sorting. I think sorting relieves a huge amount of work. Those reading our chart have plenty to make sense of already. Why not sort so the letters most frequently used pop out immediately?
 
-The choice we have to make in between respecting the order of the letters of the alphabet or sorting them by the measure defining the length of our bars. My argument is for sorting. I like to relieve our audience from as much as possible. Those who read our chart have plenty to make sense of already. Why not sort that so that the letters most frequently used in the english language pop out immediately. To leave the letters unsorted does tell the story of where along the alphabet are the most letters used, but that isn't the message here. We could also encode the vowels with a different hue so they stand out if we want to tell that story.
+To leave the letters unsorted does tell the story of where along the alphabet the most letters used lie, but that isn't the message here. We could also encode the vowels with a different hue so they stand out. At the end of the day, the success of our chart depends how effectively we communicate the important messages.
 
-#### The Naked Bones
+---
 
-The documents we're driving with data live in the DOM, so we need to create some scaffolding to before we begin appending SVGs to our screen.
+#### Bare Bones DOM
+
+For those who don't know, D3 stands for Data Driven Documents. The documents we're driving with data live in the DOM. The first thing you want to as you start to code involves putting up some scaffolding.
 
 ```html
 <!DOCTYPE html>
@@ -81,9 +117,15 @@ The documents we're driving with data live in the DOM, so we need to create some
 </body>
 ```
 
+Empty out the index.html file, if it isn't already, and copy/paste the code above into the page.
+
+![empty](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/empty-dom.png)
+
+---
+
 #### Title
 
-Every chart should have a role. The best way to define a charts purpose is by giving your chart a clear title. We'll do this with a simple p tag which will be styled later.
+Every chart has a role to play. How do we know what this chart is meant to do? One way is by giving your chart a clear title. We'll do this with a simple p tag.
 
 ```html
 <p>Relative frequencices of the letters of the English language</p>
@@ -91,11 +133,13 @@ Every chart should have a role. The best way to define a charts purpose is by gi
 
 Place the p tag inside your body tag just before the empty script tags.
 
+![chart title](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/chart-title.png)
+
+---
+
 #### Append Your svg and g to the Screen
 
-Now that our screen has a message to tell we can create some space to tell our story. For that we need to place an SVG element on the screen will a smaller g positioned appropriately. You can read more about why we do this in the [Margin Convention](MARGIN CONVENTION LINK) docs.
-
-Inside your script tags inserd the code below.
+Now that we know what our chart's meant to do we need space to tell our story. For that we need to place an svg element on the screen with a smaller g placed inside. You can read more about this convention [here](https://bl.ocks.org/mbostock/3019563).
 
 ```javascript
 var margin = {
@@ -115,15 +159,23 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 ```
 
-Here we are declaring a couple varibles used to set the size of our space. We are appending an svg to our body and g element to our svg. Again, why we append a g element to our SVG makes more sense in the Margin Convention documentation.
+Copy/paste the code above inside your script tags.
 
-Note that 960x500 are demensions rendered inside bl.ocks.org. Feel free to change the size of your SVG to suit your needs. I trying to get into the habit of creating bl.ock friendly charts, which is why we're choosing those dimensions.
+![svg and g inserted](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/svg-g-inserted.png)
 
-I hesitate to explain the transform attribute, becuase there is much more you can do then translate, but I will say this, translate takes a string in between the parenthesis in the the form of (x, y). If you want to use variables for the x,y make sure they converted into a string.
+Here we declare varibles used to set the size of our chart. We append an svg to our body and g element to the svg. Again, why we append a g element to our svg makes more sense in the [Margin Convention](https://bl.ocks.org/mbostock/3019563) documentation.
+
+Note that 960x500 are demensions rendered inside bl.ocks.org. Feel free to change the size. Personally, I'm trying to get into the habit of creating bl.ock friendly charts. So, that's why we choose those dimensions here.
+
+Don't worry about the transform attribute for now. We will get into more later on. For now just know the translate argument takes a string in the form of (x, y) between the parenthesis.
+
+---
 
 #### Create Scales and Axis
 
-Some say scales are the most important device in all your D3 development. They're used to convert data into to pixels. An easier way to think of scales is by thinking of them as translating data space into screen space. If that still doesn't think about the metric conversion you need to do when you travel outside the United States. For someone like me who's used to gauging distance in miles, I feed kilometers into a converter and get miles in return. D3 scales take in our data and return a number that makes sense our screen.
+Some say scales are the most features of the D3 library. In this context, we will use them to convert data into to pixels, but they can be used for much much more.
+
+Think of scales as a function translating data space into screen space. If that still doesn't resonate think about metric conversions. Those from the states who travel to other countries quickly realize distance is measured differently. Someone used to gauging distance in miles would feed kilometers into a converter and get miles to get a read out in miles. D3 scales take in our data and return a number that fits our our screen.
 
 ```javascript
 var x = d3.scaleLinear()
@@ -152,16 +204,20 @@ var yAxis = d3.axisLeft(y);
 
 You can place this just below the last code block you copy/pasted.
 
-Axis generators in D3 do a good amount of work for us. They create text labels, tick marks and zero lines. Whether you want to see all those elements is your call, but D3 give them to you by default.
+Axis generators in D3 do a lot of work. They create text labels, tick marks and zero lines. Whether you want to see all those elements is your call, but D3 give them to you by default.
 
-For our xAxis we chose axisTop so our text shows up above the line. The x argument we feed in there is our scale created earlier. Since our measure is a percentage we can format <Get a better understanding of what ticks is doing.>.
+For our xAxis we chose axisTop so our text shows up above the line. The x argument we feed in is the scale created earlier. Since our measure is a percentage we can format the ticks as such with precision to the tenths place.
 
-The only specification we state in our y-axis declaration is that we want the text to show on the left and to use the y scale we created earlier.
+The only specification we state in our y-axis is that we want the text to show on the left and to use the y scale created earlier.
+
+Nothing changing visually, because we haven't called the scales.
+
+---
 
 #### We're Ready for the Data
 
 ```javascript
-d3.csv("data.csv", function(error, data) {
+d3.csvParse("data.csv", function(error, data) {
   if (error) throw error;
 
   data.forEach(function(d) {
@@ -171,23 +227,28 @@ d3.csv("data.csv", function(error, data) {
   data.sort(function(a, b) {
     return a.frequency - b.frequency;
   });
-
 });
 ```
 
-Insert this code just below the last block of code you copy/pasted.
+Insert this code just below the last block you copy/pasted.
 
-Here we are using one of D3's utility functions <Find out what this is actually called.> to read in our data from the csv file.
+Here we use a helpful feature of the D3 API to parse data in a csv format.
 
-After the data is read we need to do a bit of processing. The csv file format stores you data as strings. For D3 we are going to need to run some arithmetic operations and we cannot do that if our data isn't in a number format. Javascript keeps numerical format simple by only having one numerical data type, number. The easiest way to convert a string to a number in JavaScript is by placing a mathematical operator in front of the string. The compiler will look at the operation trying to be run and convert your string to a number. With a number can calculate the right scales and width each bar needs to be.
+Once the data is read in we need to do a bit more processing. Csv files store all your data as strings. This can be a probably when you need to calculate the width of bars. Thankfully, this data set is small, so a simple loop over each frequency value can convert them from a string to a number.
 
-With or frequency data converted to a number we can also sort our bars approriately. See if you can figure out how our sorting function works on strings by commenting our the code block tied to the forEach and rerunning the code.
+With or frequency data converted to a number we can also sort our bars. Remember, the reason we sort our bars is to bring the most important information to our viewers attention as quickly as possible.
 
-Remember, the reason we want to sort our bars is to bring the most important information to our viewers attention as quickly as possible.
+You still won't see anything different aesthetically.
+
+---
 
 #### Declare the Limits of Our Data
 
-We are physically limited by the size of our screens. We need a way to communicate that limitation to our data. The scales created earlier are our means of communicating that message. Earlier when we delcare a range for each scale we were defining the physical limitations such as width and height. Now that we have data we can finish out our scales with domains.
+![input-domain](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/input-domain.png)
+
+How do we specify were the ends of our bars should land?
+
+D3 scales to the rescue! Earlier when we delcare a range for each scale we were defining the physical limitations such as width and height. Now that we have data we can finish out our scales with domains.
 
 ```javascript
 x.domain([0, d3.max(data, function(d) { return d.frequency; })]);
@@ -198,7 +259,9 @@ y.domain(data.map(function(d) { return d.letter; }))
 
 Copy/paste the code above just beneath the data.sort code block, but before the last closing bracket.
 
-This code is adding domains to our x and y scales. To our x scale we want a domain from 0 to the heighest frequency value. For our y scale we just want to map each letter to an index value and give each horizontal bar a small amount of space in between. <Find out what units are used for the scale padding.>
+This code is adding domains to our x and y scales. To our x scale we want a domain from 0 to the heighest frequency value. For our y scale we just want to map each letter to an index value and give each row a bit of space in between. The paddingInner defines what percent of each row should be left for spacing in between the bars.
+
+---
 
 #### Append Our Axis
 
@@ -218,9 +281,13 @@ svg.append("g")
 
 Copy/paste this code just below the y.domain code, but inside the closing bracket.
 
-To the g or group element we appended to the body earlier we're going to append two more group elements. One will have the ingredients of a y-axis and the other the ingredients of an x axis, per our specifications.
+![add axis](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/add-axis.png)
 
-Everything in these to code blocks you've been introduced to before expect the .call(). The .call() is a method used to invoke our generators. <speak to this in more depth>
+We just append to more g element to the intial g element positioned inside the svg. Could that sound any more abstract? One of the g elements will have the ingredients of a y-axis and the other the ingredients of an x axis, per our specifications.
+
+Everything in these code blocks you've been introduced to before except the .call(). The .call() is a method used to invoke our generators. The [.call](https://github.com/d3/d3-selection/blob/master/README.md#selection_call) is a consice way for us to call the axis functions created early while keeping them bound to our selection.
+
+---
 
 #### Draw Some Rectangles!
 
@@ -241,7 +308,11 @@ If you have gotten this far, then you probably know what I'm going to tell you t
 
 Copy/paste the code above just below the last block you copy/pasted, but still insted the second to last closing bracket.
 
-This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as bar and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you don't have a full bar.
+![draw rectangles](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/draw-rectangles.png)
+
+This code selects all of the bars, binds the .bar selection to data, enters the data bound elements to the DOM and appends one rect for each .bar selection. The other lines of code class each selection as bar and set a few attributes such as x, y, height and width. Each of these attributes are required before you get to see bars on the screen. Forget to assign values to one of these attributes and you won't have any bars to show.
+
+---
 
 #### Time to Pain With CSS
 
@@ -293,9 +364,17 @@ text {
 
 Save and rerun your code to see your freshly styled D3 bar chart!
 
+```html
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300" rel="stylesheet">
+```
+
+For good measure place the line of code above in between line 3 and 4 of your index.html document.
+
+![Congratulations](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/you-did-it.png)
+
 If you'd like understand more about how CSS works please visit <howylearn.com> for more details.
 
-You did it!!!
+## You did it!!!
 
 ### Enhancements
 
