@@ -69,16 +69,15 @@ The attributes you choose affect how your data is precieved. Duh, right? Well, n
 
 1. [Gather the Data](#our-data)
 2. [Think About Your Messaging](#think-about-your-massaging)
-3. Code
-		1. [Put up a Skeleton](#put-up-a-skeleton)
-    2. [Title](#title)
-    3. [Create Space for Your Chart](#create-space-for-your-chart)
-    4. [Create Scales and Axis](#create-scales-and-axis)
-    5. [Bring in the Data](#bring-in-the-data)
-    6. [Set the Domain](#set-the-domain)
-    7. [Draw the Axis](#draw-the-axis)
-    8. [Render Rectangles](#render-rectangles)
-    9. [Apply Styles](#apply-styles)
+3. [Put up a Skeleton](#put-up-a-skeleton)
+4. [Title](#title)
+5. [Create Space for Your Chart](#create-space-for-your-chart)
+6. [Create Scales and Axis](#create-scales-and-axis)
+7. [Bring in the Data](#bring-in-the-data)
+8. [Set the Domain](#set-the-domain)
+9. [Draw the Axis](#draw-the-axis)
+10. [Render Rectangles](#render-rectangles)
+11. [Apply Styles](#apply-styles)
 
 # Our Data
 
