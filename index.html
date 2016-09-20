@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <head>
-
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300" rel="stylesheet">
   <script src="https://d3js.org/d3.v4.min.js"></script>
-
   <style>
     p {
       margin: 0px 0px 0px 20px;
@@ -47,21 +45,18 @@
       font-size: 10px;
       text-anchor: middle;
     }
-
   </style>
-
 </head>
-<p>Relative frequencices of the letters of the English language</p>
 <body>
-
+  <p>Relative frequencices of the letters of the English language</p>
   <script>
-
     var margin = {
         top: 20,
         right: 20,
         bottom: 30,
         left: 40
       };
+
     var width = 960 - margin.left - margin.right;
     var height = 500 - margin.top - margin.bottom;
 
@@ -86,8 +81,7 @@
       if (error) throw error;
 
       data.forEach(function(d) {
-        d.frequency = +d.frequency;
-        return d;
+        return d.frequency = +d.frequency;
       });
 
       data.sort(function(a, b) {
@@ -121,5 +115,4 @@
     });
 
   </script>
-
 </body>
