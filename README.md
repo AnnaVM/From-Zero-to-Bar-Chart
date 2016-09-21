@@ -81,7 +81,7 @@ The attributes you choose affect how your data is precieved. Duh, right? Well, n
 
 # Our Data
 
-The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/images/data.csv). You should also be able to reference data.csv from your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll recall manually input data used and a .tsv. To make things more familiar I converted the .tsv used in that guide into a .csv.
+The csv can be accessed [here](https://github.com/rcrocker13/From-Zero-to-Bar-Chart/blob/master/data.csv). You should also be able to reference data.csv from your current working directory. If you're familar with [Let's Make a Bar Chart](https://bost.ocks.org/mike/bar/) then you'll recall manually input data used and a .tsv. To make things more familiar I converted the .tsv used in that guide into a .csv.
 
 To make a bar chart our data needs two ingredients. Your data needs [both](http://regentsprep.org/regents/math/algebra/ad1/qualquant.htm) a qualitative and quantitative dimension. By this I mean you need a column with [categories](https://en.wikipedia.org/wiki/Categorical_variable) and a column with values. Idealy the data will be rolled up to one row per category. Those familar with SQL can think about this as a [GROUP BY](http://www.w3schools.com/sql/sql_groupby.asp) clause. JS practitioners may think of this one-to-one structure as a JSON [key-value pair](http://stackoverflow.com/questions/3715644/key-value-pairs-using-json).
 
