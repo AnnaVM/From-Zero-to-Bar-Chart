@@ -227,7 +227,7 @@ Nothing will change visually before we call the scales.
 # Bring in the Data
 
 ```javascript
-d3.csvParse("data.csv", function(error, data) {
+d3.csv("data.csv", function(error, data) {
   if (error) throw error;
 
   data.forEach(function(d) {
